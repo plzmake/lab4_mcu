@@ -1,0 +1,5 @@
+output_display.c:12:6:updateClockBuffer	16	static
+output_display.c:22:6:display7SEG	16	static
+output_display.c:75:6:update7SEG	16	static
+output_display.c:105:6:scan_led7seg	8	static
+output_display.c:116:6:updateClockBuffer2	16	static

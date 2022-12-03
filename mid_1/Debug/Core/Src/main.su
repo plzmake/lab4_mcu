@@ -1,0 +1,12 @@
+main.c:71:6:test_one1	8	static
+main.c:74:6:test_one2	8	static
+main.c:77:6:test_one3	8	static
+main.c:80:6:test_one4	8	static
+main.c:83:6:ONE_SHOT	8	static
+main.c:88:6:one_shot_but	8	static
+main.c:91:5:main	8	static
+main.c:219:6:SystemClock_Config	72	static
+main.c:255:13:MX_TIM2_Init	32	static
+main.c:300:13:MX_GPIO_Init	32	static
+main.c:349:6:HAL_TIM_PeriodElapsedCallback	16	static
+main.c:364:6:Error_Handler	4	static,ignoring_inline_asm
