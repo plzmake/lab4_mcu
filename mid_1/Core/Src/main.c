@@ -66,28 +66,9 @@ static void MX_TIM2_Init(void);
 /**
   * @brief  The application entry point.
   * @retval int
-  */
-
-void test_one1(){
-	HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
-}
-void test_one2(){
-	HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-}
-void test_one3(){
-	HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-}
-void test_one4(){
-	HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
-}
-void ONE_SHOT(){
-	HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
-	HAL_Delay(1000);
-	HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
-}
-void one_shot_but(){
-	HAL_GPIO_TogglePin(LED5_GPIO_Port, LED5_Pin);
-}
+  */void one_shot_but(){
+		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+	}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -190,17 +171,17 @@ HAL_TIM_Base_Start_IT(&htim2);
 //Settimer3(150);
 
 //x2.5 l
-SCH_Add_Task(test_one1, 1030, 1000);
-SCH_Add_Task(test_one2, 1070, 1000);
-SCH_Add_Task(test_one3, 1110, 1000);
-SCH_Add_Task(test_one4, 1130, 1000);
-SCH_Add_Task(ONE_SHOT, 5000, 0);
+//SCH_Add_Task(test_one1, 1030, 1000);
+//SCH_Add_Task(test_one2, 1070, 1000);
+//SCH_Add_Task(test_one3, 1110, 1000);
+//SCH_Add_Task(test_one4, 1130, 1000);
+SCH_Add_Task(one_shot_but, 5000, 1000);
 //nho sua 500 thanh 1000
   while (1)
   {//fsm_simple_buttons_run();
   //long_press();
   //timer_out_10s();
-	  //xíu test sự hoạt động vòng for cho thêm task thứ 2 thay đổi thời gian delay xem có ảnh hưởng đến task thứ 1 ko(trong phạm vi delay thứ 2 nhỏ hơn thứ 1)
+	  //xíu test sự hoạt động vòng for cho thêm task thứ 2 thay đổi th�?i gian delay xem có ảnh hưởng đến task thứ 1 ko(trong phạm vi delay thứ 2 nh�? hơn thứ 1)
 	  SCH_Dispatch_Tasks();
 
 //	  fsm_automatic_run();
@@ -352,7 +333,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 //	isB1Nor();
 //	isB2Nor();
 	SCH_Update();
-	sch_one_shot_button(one_shot_but,1000,0);
+
 	//fsmTimerRun();
 }
 /* USER CODE END 4 */
